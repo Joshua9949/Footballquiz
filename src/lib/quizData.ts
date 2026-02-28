@@ -1,0 +1,517 @@
+export type Difficulty = "easy" | "medium" | "hard";
+
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  difficulty: Difficulty;
+}
+
+export interface League {
+  id: string;
+  name: string;
+  country: string;
+  emoji: string;
+}
+
+export const leagues: League[] = [
+  { id: "premier-league", name: "Premier League", country: "England", emoji: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+  { id: "la-liga", name: "La Liga", country: "Spain", emoji: "🇪🇸" },
+  { id: "serie-a", name: "Serie A", country: "Italy", emoji: "🇮🇹" },
+  { id: "bundesliga", name: "Bundesliga", country: "Germany", emoji: "🇩🇪" },
+  { id: "ligue-1", name: "Ligue 1", country: "France", emoji: "🇫🇷" },
+  { id: "primeira-liga", name: "Primeira Liga", country: "Portugal", emoji: "🇵🇹" },
+  { id: "eredivisie", name: "Eredivisie", country: "Netherlands", emoji: "🇳🇱" },
+  { id: "belgian-pro", name: "Belgian Pro League", country: "Belgium", emoji: "🇧🇪" },
+  { id: "mls", name: "Major League Soccer", country: "USA", emoji: "🇺🇸" },
+  { id: "super-lig", name: "Süper Lig", country: "Turkey", emoji: "🇹🇷" },
+  { id: "champions-league", name: "Champions League", country: "Europe", emoji: "🏆" },
+];
+
+export const playerQuizQuestions: QuizQuestion[] = [
+  // EASY
+  { question: "Which player has won the most Ballon d'Or awards?", options: ["Cristiano Ronaldo", "Lionel Messi", "Michel Platini", "Johan Cruyff"], correctAnswer: 1, difficulty: "easy" },
+  { question: "What nationality is Kylian Mbappé?", options: ["Belgian", "French", "Cameroonian", "Spanish"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which club did Cristiano Ronaldo start his career at?", options: ["Manchester United", "Real Madrid", "Sporting CP", "Juventus"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who is known as 'The Egyptian King'?", options: ["Mohamed Elneny", "Mohamed Salah", "Ahmed Hegazi", "Amr Zaki"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which player scored the 'Hand of God' goal?", options: ["Pelé", "Diego Maradona", "Zinedine Zidane", "Ronaldinho"], correctAnswer: 1, difficulty: "easy" },
+  { question: "What position does Manuel Neuer play?", options: ["Striker", "Midfielder", "Defender", "Goalkeeper"], correctAnswer: 3, difficulty: "easy" },
+  { question: "Which country is Neymar from?", options: ["Argentina", "Portugal", "Brazil", "Colombia"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who wears the number 10 shirt for Argentina historically?", options: ["Messi", "Maradona", "Both A and B", "Agüero"], correctAnswer: 2, difficulty: "easy" },
+  { question: "What position does Virgil van Dijk play?", options: ["Striker", "Midfielder", "Centre-back", "Goalkeeper"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Which club does Erling Haaland play for?", options: ["Borussia Dortmund", "Manchester City", "Real Madrid", "Bayern Munich"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which country is Luka Modrić from?", options: ["Serbia", "Croatia", "Slovenia", "Bosnia"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Who is nicknamed 'CR7'?", options: ["Carlos Rúben", "Cristiano Ronaldo", "Casemiro", "Coutinho"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which player is known as 'The Phenomenon'?", options: ["Ronaldinho", "Ronaldo Nazário", "Rivaldo", "Romário"], correctAnswer: 1, difficulty: "easy" },
+  { question: "What nationality is Robert Lewandowski?", options: ["German", "Czech", "Polish", "Austrian"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Which English club did Thierry Henry famously play for?", options: ["Chelsea", "Liverpool", "Arsenal", "Tottenham"], correctAnswer: 2, difficulty: "easy" },
+  // MEDIUM
+  { question: "How many career goals did Pelé officially score (FIFA recognized)?", options: ["757", "767", "777", "787"], correctAnswer: 2, difficulty: "medium" },
+  { question: "Which player has made the most Premier League appearances?", options: ["Ryan Giggs", "Gareth Barry", "Frank Lampard", "David James"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who won the FIFA World Cup Golden Ball in 2022?", options: ["Kylian Mbappé", "Lionel Messi", "Luka Modrić", "Emi Martinez"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Which player holds the record for most goals in a single calendar year?", options: ["Cristiano Ronaldo", "Gerd Müller", "Lionel Messi", "Robert Lewandowski"], correctAnswer: 2, difficulty: "medium" },
+  { question: "Who was the youngest player to score in a FIFA World Cup final?", options: ["Pelé", "Kylian Mbappé", "Michael Owen", "Ronaldo Nazário"], correctAnswer: 0, difficulty: "medium" },
+  { question: "Which player has scored in the most consecutive Premier League games?", options: ["Ruud van Nistelrooy", "Jamie Vardy", "Mohamed Salah", "Thierry Henry"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who won the first FIFA Best Men's Player award in 2016?", options: ["Lionel Messi", "Cristiano Ronaldo", "Antoine Griezmann", "Neymar"], correctAnswer: 1, difficulty: "medium" },
+  { question: "What is Erling Haaland's middle name?", options: ["Braut", "Johan", "Erik", "Lars"], correctAnswer: 0, difficulty: "medium" },
+  { question: "Which player scored 50+ La Liga goals in 2011-12?", options: ["Cristiano Ronaldo", "Lionel Messi", "Karim Benzema", "Gonzalo Higuaín"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who won the Golden Boot at Euro 2020?", options: ["Cristiano Ronaldo", "Patrik Schick", "Karim Benzema", "Both A and B"], correctAnswer: 3, difficulty: "medium" },
+  { question: "Which player has scored the most FIFA World Cup goals?", options: ["Ronaldo Nazário", "Miroslav Klose", "Just Fontaine", "Pelé"], correctAnswer: 1, difficulty: "medium" },
+  { question: "At which club did Zinedine Zidane finish his playing career?", options: ["Juventus", "Real Madrid", "Bordeaux", "Marseille"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who scored a bicycle kick in the 2018 CL quarter-final vs Juventus?", options: ["Gareth Bale", "Cristiano Ronaldo", "Neymar", "Karim Benzema"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Which player is nicknamed 'El Niño'?", options: ["Sergio Agüero", "Fernando Torres", "David Villa", "Raúl"], correctAnswer: 1, difficulty: "medium" },
+  { question: "How many goals did Cristiano Ronaldo score for Real Madrid?", options: ["350", "400", "450", "500+"], correctAnswer: 2, difficulty: "medium" },
+  // HARD
+  { question: "Which player has the most assists in Champions League history?", options: ["Lionel Messi", "Cristiano Ronaldo", "Ángel Di María", "Neymar"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who is the all-time top scorer for the German national team?", options: ["Gerd Müller", "Miroslav Klose", "Thomas Müller", "Lukas Podolski"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Which player won the Ballon d'Or in 2006?", options: ["Ronaldinho", "Fabio Cannavaro", "Thierry Henry", "Zinedine Zidane"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who scored the fastest hat-trick in Premier League history?", options: ["Sadio Mané", "Robbie Fowler", "Alan Shearer", "Sergio Agüero"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Which goalkeeper has won the most Golden Glove awards in PL history?", options: ["Petr Čech", "Joe Hart", "Edwin van der Sar", "Pepe Reina"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Which player has won the most UEFA Champions League titles as a player?", options: ["Cristiano Ronaldo", "Francisco Gento", "Paolo Maldini", "Alfredo Di Stéfano"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who holds the record for most international caps in football history?", options: ["Sergio Ramos", "Bader Al-Mutawa", "Cristiano Ronaldo", "Ahmed Hassan"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who scored the 'Rabona' goal in Serie A that went viral?", options: ["Erik Lamela", "Ángel Di María", "Paulo Dybala", "Lautaro Martínez"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Which player won the 1999 Ballon d'Or?", options: ["Zinedine Zidane", "Rivaldo", "David Beckham", "Andriy Shevchenko"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who is the youngest ever Ballon d'Or winner?", options: ["Lionel Messi", "Ronaldo Nazário", "Michael Owen", "Marco van Basten"], correctAnswer: 2, difficulty: "hard" },
+  { question: "Which player has the most hat-tricks in La Liga history?", options: ["Cristiano Ronaldo", "Lionel Messi", "Telmo Zarra", "Hugo Sánchez"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who scored the 'Goal of the Century' according to FIFA?", options: ["Pelé", "Diego Maradona", "Zinedine Zidane", "George Best"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Which player has won the most Serie A titles?", options: ["Gianluigi Buffon", "Giorgio Chiellini", "Leonardo Bonucci", "Alessandro Del Piero"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Who won the 2003 Ballon d'Or?", options: ["Zinedine Zidane", "Ronaldo Nazário", "Pavel Nedvěd", "Thierry Henry"], correctAnswer: 2, difficulty: "hard" },
+  { question: "Which player scored in three different World Cup finals?", options: ["Pelé", "Kylian Mbappé", "Zinedine Zidane", "Vavá"], correctAnswer: 0, difficulty: "hard" },
+];
+
+export const managerQuizQuestions: QuizQuestion[] = [
+  // EASY
+  { question: "Who is the most successful manager in Premier League history?", options: ["Arsène Wenger", "Pep Guardiola", "Sir Alex Ferguson", "José Mourinho"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Which country is Pep Guardiola from?", options: ["Portugal", "Spain", "Italy", "Argentina"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which club did Jürgen Klopp manage before Liverpool?", options: ["Bayern Munich", "Mainz 05", "Borussia Dortmund", "Schalke 04"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who managed Italy to the 2006 World Cup win?", options: ["Carlo Ancelotti", "Marcello Lippi", "Fabio Capello", "Antonio Conte"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which manager is known as 'The Special One'?", options: ["Carlo Ancelotti", "Pep Guardiola", "José Mourinho", "Zinedine Zidane"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who managed Spain to the 2010 World Cup victory?", options: ["Luis Enrique", "Vicente del Bosque", "Luis Aragonés", "Julen Lopetegui"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which club did Zinedine Zidane manage to 3 consecutive CL titles?", options: ["PSG", "Juventus", "Real Madrid", "Bayern Munich"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who is Carlo Ancelotti?", options: ["A referee", "A manager who won CL with Milan and Real Madrid", "A player only", "A FIFA president"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which manager is associated with 'tiki-taka' football?", options: ["José Mourinho", "Diego Simeone", "Pep Guardiola", "Antonio Conte"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who currently manages Manchester City?", options: ["Jürgen Klopp", "Pep Guardiola", "Thomas Tuchel", "Erik ten Hag"], correctAnswer: 1, difficulty: "easy" },
+  { question: "Which Italian manager won the PL with Chelsea in 2017?", options: ["Carlo Ancelotti", "Roberto Di Matteo", "Antonio Conte", "Claudio Ranieri"], correctAnswer: 2, difficulty: "easy" },
+  { question: "Who managed Argentina to the 2022 World Cup victory?", options: ["Diego Simeone", "Lionel Scaloni", "Mauricio Pochettino", "Marcelo Gallardo"], correctAnswer: 1, difficulty: "easy" },
+  // MEDIUM
+  { question: "How many Premier League titles did Sir Alex Ferguson win?", options: ["11", "12", "13", "14"], correctAnswer: 2, difficulty: "medium" },
+  { question: "Which manager led Leicester City to the 2015-16 PL title?", options: ["Brendan Rodgers", "Claudio Ranieri", "Craig Shakespeare", "Claude Puel"], correctAnswer: 1, difficulty: "medium" },
+  { question: "What tactical formation is Pep Guardiola most associated with?", options: ["4-4-2", "3-5-2", "4-3-3", "5-3-2"], correctAnswer: 2, difficulty: "medium" },
+  { question: "Which manager won the treble with Inter Milan in 2010?", options: ["Roberto Mancini", "José Mourinho", "Carlo Ancelotti", "Rafa Benítez"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who managed Ajax to the 1995 Champions League title?", options: ["Frank Rijkaard", "Louis van Gaal", "Ronald Koeman", "Johan Cruyff"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Which manager is famous for 'parking the bus' defensive tactics?", options: ["Pep Guardiola", "José Mourinho", "Jürgen Klopp", "Marcelo Bielsa"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who managed France to the 2018 World Cup victory?", options: ["Laurent Blanc", "Didier Deschamps", "Raymond Domenech", "Zinedine Zidane"], correctAnswer: 1, difficulty: "medium" },
+  { question: "What is 'Gegenpressing' and which manager popularized it?", options: ["Counter-attack by Mourinho", "High pressing by Klopp", "Tiki-taka by Guardiola", "Catenaccio by Conte"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who managed Chelsea to the 2012 Champions League title?", options: ["André Villas-Boas", "Roberto Di Matteo", "José Mourinho", "Carlo Ancelotti"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Which manager led Atletico Madrid to two CL finals?", options: ["Luis Aragonés", "Diego Simeone", "Gregorio Manzano", "Raddy Antić"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Who was the first manager to win the Premier League with Arsenal?", options: ["Arsène Wenger", "George Graham", "Bruce Rioch", "Don Howe"], correctAnswer: 1, difficulty: "medium" },
+  { question: "Which manager won La Liga with Atletico Madrid in 2013-14?", options: ["José Mourinho", "Diego Simeone", "Quique Simeone", "Ernesto Valverde"], correctAnswer: 1, difficulty: "medium" },
+  // HARD
+  { question: "Which manager has won the Champions League with two different clubs?", options: ["Pep Guardiola", "Carlo Ancelotti", "José Mourinho", "Both B and C"], correctAnswer: 3, difficulty: "hard" },
+  { question: "Who was the first manager to win the European Cup/CL three times?", options: ["Bob Paisley", "Carlo Ancelotti", "Zinedine Zidane", "Both A and C"], correctAnswer: 3, difficulty: "hard" },
+  { question: "Which Argentine manager is known as 'El Loco' for his intense style?", options: ["Diego Simeone", "Marcelo Gallardo", "Marcelo Bielsa", "Jorge Sampaoli"], correctAnswer: 2, difficulty: "hard" },
+  { question: "Who managed Nottingham Forest to back-to-back European Cups?", options: ["Bill Shankly", "Brian Clough", "Matt Busby", "Bob Paisley"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Which manager introduced 'Total Football' at Ajax?", options: ["Rinus Michels", "Louis van Gaal", "Johan Cruyff", "Ernst Happel"], correctAnswer: 0, difficulty: "hard" },
+  { question: "How many Champions League titles has Carlo Ancelotti won as manager?", options: ["3", "4", "5", "2"], correctAnswer: 2, difficulty: "hard" },
+  { question: "Which manager led Borussia Dortmund to the 1997 Champions League title?", options: ["Jürgen Klopp", "Ottmar Hitzfeld", "Thomas Tuchel", "Lucien Favre"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who is the youngest manager to win the Champions League?", options: ["Pep Guardiola", "Gianluca Vialli", "André Villas-Boas", "Julian Nagelsmann"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Which manager won the treble with Manchester United in 1999?", options: ["José Mourinho", "Sir Alex Ferguson", "Louis van Gaal", "David Moyes"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Who managed AC Milan in the famous 2005 CL final vs Liverpool?", options: ["Fabio Capello", "Carlo Ancelotti", "Alberto Zaccheroni", "Arrigo Sacchi"], correctAnswer: 1, difficulty: "hard" },
+  { question: "Which manager has the most wins in Champions League history?", options: ["Sir Alex Ferguson", "Carlo Ancelotti", "Pep Guardiola", "José Mourinho"], correctAnswer: 0, difficulty: "hard" },
+  { question: "Who was the manager of the 'Invincibles' Arsenal team?", options: ["George Graham", "Arsène Wenger", "Unai Emery", "Bruce Rioch"], correctAnswer: 1, difficulty: "hard" },
+];
+
+const leagueQuestions: Record<string, QuizQuestion[]> = {
+  "premier-league": [
+    // EASY
+    { question: "Which team has won the most Premier League titles?", options: ["Liverpool", "Chelsea", "Manchester United", "Arsenal"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Who is the Premier League's all-time top scorer?", options: ["Wayne Rooney", "Alan Shearer", "Thierry Henry", "Andrew Cole"], correctAnswer: 1, difficulty: "easy" },
+    { question: "In what year was the Premier League founded?", options: ["1990", "1992", "1994", "1996"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which team won the PL in 2015-16 as surprise champions?", options: ["Tottenham", "Leicester City", "West Ham", "Southampton"], correctAnswer: 1, difficulty: "easy" },
+    { question: "How many teams play in the Premier League?", options: ["18", "20", "22", "24"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What color is Arsenal's home kit?", options: ["Blue", "Red", "White", "Yellow"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city has the most Premier League clubs?", options: ["Manchester", "London", "Liverpool", "Birmingham"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which stadium is home to Liverpool FC?", options: ["Old Trafford", "Anfield", "Goodison Park", "Stamford Bridge"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is Manchester City's stadium called?", options: ["Old Trafford", "Etihad Stadium", "Emirates Stadium", "London Stadium"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which club is nicknamed 'The Gunners'?", options: ["Chelsea", "Tottenham", "Arsenal", "West Ham"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Tottenham's new stadium called?", options: ["White Hart Lane", "Tottenham Hotspur Stadium", "Wembley", "The Den"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which team wears blue and plays at Stamford Bridge?", options: ["Everton", "Chelsea", "Manchester City", "Leicester"], correctAnswer: 1, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which manager has won the most Premier League titles?", options: ["Arsène Wenger", "José Mourinho", "Alex Ferguson", "Pep Guardiola"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team completed an unbeaten PL season?", options: ["Manchester United", "Chelsea", "Arsenal", "Liverpool"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Who scored the fastest goal in PL history?", options: ["Alan Shearer", "Shane Long", "Ledley King", "Christian Eriksen"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which club holds the record for most points in a PL season (100)?", options: ["Chelsea", "Liverpool", "Manchester City", "Arsenal"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Who won the first ever Premier League Golden Boot?", options: ["Alan Shearer", "Teddy Sheringham", "Les Ferdinand", "Ian Wright"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which stadium is known as 'The Theatre of Dreams'?", options: ["Anfield", "Old Trafford", "Stamford Bridge", "Emirates"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team won the Premier League in 2022-23?", options: ["Arsenal", "Manchester City", "Liverpool", "Newcastle"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who scored the iconic 'AGÜEROOOO' goal in 2012?", options: ["Carlos Tevez", "Sergio Agüero", "David Silva", "Yaya Touré"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which club won its first PL title in 2011-12?", options: ["Chelsea", "Tottenham", "Manchester City", "Leicester"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Who was the first foreign manager to win the Premier League?", options: ["José Mourinho", "Arsène Wenger", "Carlo Ancelotti", "Rafael Benítez"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team has the most consecutive PL wins in a single season?", options: ["Liverpool", "Manchester City", "Arsenal", "Chelsea"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who scored a famous half-way line goal vs Wimbledon?", options: ["Eric Cantona", "David Beckham", "Paul Scholes", "Steven Gerrard"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "How many consecutive PL titles did Manchester United win from 2006-09?", options: ["2", "3", "4", "5"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which player has the most Premier League assists?", options: ["Cesc Fàbregas", "Ryan Giggs", "Frank Lampard", "Kevin De Bruyne"], correctAnswer: 1, difficulty: "hard" },
+    { question: "What was the highest scoring PL game (9-0)?", options: ["Man Utd vs Ipswich", "Leicester vs Southampton", "Both A and B", "None"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which team has the longest unbeaten home run in PL history?", options: ["Arsenal", "Chelsea", "Liverpool", "Manchester United"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who holds the record for most PL clean sheets?", options: ["Petr Čech", "Joe Hart", "Edwin van der Sar", "David Seaman"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club was the first to spend £1 billion on transfers in the PL era?", options: ["Chelsea", "Manchester City", "Manchester United", "Liverpool"], correctAnswer: 0, difficulty: "hard" },
+    { question: "How many different clubs have won the Premier League?", options: ["5", "6", "7", "8"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who is the oldest player to score in the Premier League?", options: ["Teddy Sheringham", "Ryan Giggs", "Graham Alexander", "Dean Windass"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which player scored 5 goals in a single PL match vs Newcastle?", options: ["Andy Cole", "Alan Shearer", "Sergio Agüero", "Dimitar Berbatov"], correctAnswer: 2, difficulty: "hard" },
+    { question: "What is the biggest margin of victory in PL history?", options: ["8-0", "9-0", "10-0", "7-0"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which club won the first ever Premier League season?", options: ["Arsenal", "Liverpool", "Manchester United", "Blackburn"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who scored the most goals in a 38-game PL season?", options: ["Mohamed Salah", "Alan Shearer", "Cristiano Ronaldo", "Thierry Henry"], correctAnswer: 0, difficulty: "hard" },
+  ],
+  "la-liga": [
+    // EASY
+    { question: "Which club has won the most La Liga titles?", options: ["Barcelona", "Real Madrid", "Atlético Madrid", "Athletic Bilbao"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Who is La Liga's all-time top scorer?", options: ["Cristiano Ronaldo", "Raúl", "Lionel Messi", "Telmo Zarra"], correctAnswer: 2, difficulty: "easy" },
+    { question: "In which city is Camp Nou located?", options: ["Madrid", "Barcelona", "Seville", "Valencia"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is the famous rivalry between Real Madrid and Barcelona called?", options: ["The Derby", "El Clásico", "El Grande", "La Batalla"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which team plays at the Santiago Bernabéu?", options: ["Barcelona", "Atlético Madrid", "Real Madrid", "Sevilla"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What are Barcelona's main colors?", options: ["Red and White", "Blue and Red", "Yellow and Red", "Blue and White"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city is Atlético Madrid based in?", options: ["Barcelona", "Seville", "Madrid", "Valencia"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Real Madrid's nickname?", options: ["Los Colchoneros", "Los Blancos", "Los Rojiblancos", "Los Merengues"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which La Liga club plays at the Wanda Metropolitano?", options: ["Real Madrid", "Atlético Madrid", "Sevilla", "Valencia"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which league is considered the top football league in Spain?", options: ["Segunda División", "La Liga", "Copa del Rey", "Supercopa"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What color does Real Madrid traditionally wear?", options: ["Blue", "Red", "White", "Black"], correctAnswer: 2, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which La Liga team is nicknamed 'Los Colchoneros'?", options: ["Valencia", "Atlético Madrid", "Villarreal", "Real Betis"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who managed Barcelona during the 2008-2012 golden era?", options: ["Luis Enrique", "Pep Guardiola", "Frank Rijkaard", "Tito Vilanova"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team won La Liga in 2020-21?", options: ["Real Madrid", "Barcelona", "Atlético Madrid", "Sevilla"], correctAnswer: 2, difficulty: "medium" },
+    { question: "How many La Liga titles did Lionel Messi win?", options: ["8", "10", "12", "6"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which club is from the Basque Country?", options: ["Espanyol", "Athletic Bilbao", "Celta Vigo", "Mallorca"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is 'Tiki-taka'?", options: ["A Spanish dance", "A passing style of play", "A trophy", "A stadium"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team is nicknamed 'The Yellow Submarine'?", options: ["Las Palmas", "Cádiz", "Villarreal", "Real Sociedad"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which club won the Europa League 7 times?", options: ["Barcelona", "Real Madrid", "Atlético Madrid", "Sevilla"], correctAnswer: 3, difficulty: "medium" },
+    { question: "Who is Real Madrid's all-time top scorer?", options: ["Raúl", "Alfredo Di Stéfano", "Cristiano Ronaldo", "Karim Benzema"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team won La Liga in 2022-23?", options: ["Real Madrid", "Barcelona", "Atlético Madrid", "Real Sociedad"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is Athletic Bilbao's unique transfer policy?", options: ["Only sign under-25s", "Only sign Basque players", "Only sign Spanish players", "Only promote from academy"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "Which player scored 50 goals in La Liga in 2011-12?", options: ["Cristiano Ronaldo", "Lionel Messi", "Karim Benzema", "Gonzalo Higuaín"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which team won La Liga without losing a game?", options: ["Real Madrid (1932)", "Barcelona (2018)", "No team has", "Atlético (1996)"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Who is Real Madrid's all-time top appearance maker?", options: ["Iker Casillas", "Raúl", "Sergio Ramos", "Manolo Sanchís"], correctAnswer: 3, difficulty: "hard" },
+    { question: "How many consecutive El Clásico wins did Barcelona have in 2008-11?", options: ["4", "5", "6", "3"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which non-Big Three team won La Liga most recently before 2024?", options: ["Valencia", "Deportivo", "Real Sociedad", "Real Betis"], correctAnswer: 0, difficulty: "hard" },
+    { question: "How many European Cups/CL has Real Madrid won?", options: ["12", "13", "14", "15"], correctAnswer: 3, difficulty: "hard" },
+    { question: "In what year was La Liga founded?", options: ["1920", "1925", "1929", "1932"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which player has won the most Pichichi (top scorer) awards?", options: ["Lionel Messi", "Telmo Zarra", "Quini", "Hugo Sánchez"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club has the most Copa del Rey titles?", options: ["Real Madrid", "Barcelona", "Athletic Bilbao", "Real Sociedad"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Who holds the record for fastest goal in La Liga history?", options: ["Joseba Llorente", "Seydou Keita", "Samuel Eto'o", "Rivaldo"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club completed a league and CL double in 2014-15?", options: ["Real Madrid", "Barcelona", "Atlético Madrid", "Bayern Munich"], correctAnswer: 1, difficulty: "hard" },
+  ],
+  "serie-a": [
+    // EASY
+    { question: "Which team has won the most Serie A titles?", options: ["AC Milan", "Inter Milan", "Juventus", "Roma"], correctAnswer: 2, difficulty: "easy" },
+    { question: "In which city do AC Milan and Inter Milan play?", options: ["Rome", "Turin", "Milan", "Naples"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Juventus's stadium called?", options: ["San Siro", "Allianz Stadium", "Stadio Olimpico", "Diego Maradona"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which Italian club did Maradona play for?", options: ["Juventus", "Roma", "Napoli", "AC Milan"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What colors does AC Milan wear?", options: ["Blue/Black", "Red/Black", "Black/White", "Yellow/Blue"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city is Juventus based in?", options: ["Milan", "Rome", "Turin", "Naples"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Inter Milan's nickname?", options: ["I Rossoneri", "I Nerazzurri", "I Bianconeri", "I Giallorossi"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which club plays at the Stadio Diego Armando Maradona?", options: ["Roma", "Lazio", "Napoli", "Fiorentina"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is the shared stadium of AC Milan and Inter Milan called?", options: ["Allianz Stadium", "San Siro", "Stadio Olimpico", "Artemio Franchi"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which Italian club wears black and white stripes?", options: ["AC Milan", "Inter Milan", "Juventus", "Napoli"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What are Roma's colors?", options: ["Blue/White", "Red/Yellow", "Red/Black", "Green/White"], correctAnswer: 1, difficulty: "easy" },
+    // MEDIUM
+    { question: "Who is Serie A's all-time top scorer?", options: ["Silvio Piola", "Francesco Totti", "Alessandro Del Piero", "Giuseppe Meazza"], correctAnswer: 0, difficulty: "medium" },
+    { question: "Which club was involved in the Calciopoli scandal?", options: ["AC Milan", "Inter Milan", "Juventus", "Roma"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team won Serie A in 2022-23?", options: ["AC Milan", "Napoli", "Inter Milan", "Juventus"], correctAnswer: 1, difficulty: "medium" },
+    { question: "How many consecutive Serie A titles did Juventus win (2011-2020)?", options: ["7", "8", "9", "10"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team is nicknamed 'La Vecchia Signora'?", options: ["Roma", "Juventus", "AC Milan", "Lazio"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the famous derby between AC Milan and Inter called?", options: ["Derby d'Italia", "Derby della Madonnina", "Derby del Sol", "Derby della Capitale"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team is nicknamed 'I Giallorossi'?", options: ["Juventus", "Napoli", "Roma", "Lazio"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which Napoli star wore the number 10 shirt?", options: ["Maradona", "Hamsik", "Both A and B", "Insigne"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which club won the Coppa Italia the most times?", options: ["Juventus", "Roma", "Inter Milan", "AC Milan"], correctAnswer: 0, difficulty: "medium" },
+    { question: "What is the Derby della Capitale?", options: ["Milan vs Inter", "Roma vs Lazio", "Juventus vs Torino", "Napoli vs Roma"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which Serie A team is nicknamed 'I Partenopei'?", options: ["Roma", "Lazio", "Napoli", "Fiorentina"], correctAnswer: 2, difficulty: "medium" },
+    // HARD
+    { question: "Who holds the record for most goals in a single Serie A season?", options: ["Gonzalo Higuaín", "Ciro Immobile", "Gunnar Nordahl", "Luca Toni"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which team won the treble in 2009-10?", options: ["Juventus", "AC Milan", "Inter Milan", "Roma"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who managed AC Milan to 2 CL wins in the 2000s?", options: ["Fabio Capello", "Carlo Ancelotti", "Alberto Zaccheroni", "Allegri"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which player has most Serie A appearances for one club?", options: ["Gianluigi Buffon", "Paolo Maldini", "Francesco Totti", "Javier Zanetti"], correctAnswer: 2, difficulty: "hard" },
+    { question: "In what year was the Serie A founded?", options: ["1898", "1920", "1929", "1935"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which manager is credited with inventing 'Catenaccio'?", options: ["Helenio Herrera", "Arrigo Sacchi", "Nereo Rocco", "Giovanni Trapattoni"], correctAnswer: 0, difficulty: "hard" },
+    { question: "How many Serie A titles has Juventus won in total?", options: ["34", "36", "38", "30"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which club won Serie A for the first time in 33 years in 2022-23?", options: ["Roma", "Lazio", "Napoli", "Fiorentina"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who scored 36 Serie A goals in 2019-20 to match the record?", options: ["Cristiano Ronaldo", "Ciro Immobile", "Romelu Lukaku", "Zlatan Ibrahimović"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which club has the most Coppa Italia titles?", options: ["AC Milan", "Inter Milan", "Roma", "Juventus"], correctAnswer: 3, difficulty: "hard" },
+    { question: "Who was the first non-Italian to win the Serie A Golden Boot?", options: ["George Weah", "Gabriel Batistuta", "Diego Maradona", "Zlatan Ibrahimović"], correctAnswer: 0, difficulty: "hard" },
+  ],
+  "bundesliga": [
+    // EASY
+    { question: "Which team has won the most Bundesliga titles?", options: ["Borussia Dortmund", "Bayern Munich", "Hamburg", "Werder Bremen"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is Bayern Munich's stadium called?", options: ["Signal Iduna Park", "Allianz Arena", "Olympiastadion", "Veltins-Arena"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which country does the Bundesliga belong to?", options: ["Austria", "Switzerland", "Germany", "Netherlands"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What colors does Borussia Dortmund wear?", options: ["Red/White", "Blue/White", "Yellow/Black", "Green/White"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many teams play in the Bundesliga?", options: ["16", "18", "20", "22"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is Bayern Munich's nickname?", options: ["Die Borussen", "Die Roten", "Die Adler", "Die Bullen"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city is Borussia Dortmund based in?", options: ["Munich", "Berlin", "Dortmund", "Hamburg"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which club plays in red and white?", options: ["Dortmund", "Bayern Munich", "Schalke", "Wolfsburg"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What league is below the Bundesliga?", options: ["3. Liga", "2. Bundesliga", "Regionalliga", "DFB Pokal"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which famous rivalry is called 'Der Klassiker'?", options: ["Bayern vs Schalke", "Bayern vs Dortmund", "Dortmund vs Schalke", "Bayern vs Leipzig"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What cup competition runs alongside the Bundesliga?", options: ["DFB-Pokal", "Liga Cup", "Super Cup only", "Toto Cup"], correctAnswer: 0, difficulty: "easy" },
+    // MEDIUM
+    { question: "Who is the Bundesliga's all-time top scorer?", options: ["Robert Lewandowski", "Gerd Müller", "Klaus Fischer", "Jupp Heynckes"], correctAnswer: 1, difficulty: "medium" },
+    { question: "How many consecutive Bundesliga titles did Bayern win (2013-2023)?", options: ["9", "10", "11", "8"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team broke Bayern's title streak in 2022-23?", options: ["Borussia Dortmund", "RB Leipzig", "Bayer Leverkusen", "No one did"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which club is known as 'Die Borussen'?", options: ["Bayern Munich", "Borussia Dortmund", "Schalke 04", "Leverkusen"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who scored 41 goals in a single Bundesliga season?", options: ["Gerd Müller", "Robert Lewandowski", "Aubameyang", "Haaland"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the famous Dortmund fan section called?", options: ["The Kop", "Yellow Wall", "Südtribüne", "Both B and C"], correctAnswer: 3, difficulty: "medium" },
+    { question: "Which club is sponsored by Red Bull?", options: ["Bayern Munich", "RB Leipzig", "Wolfsburg", "Hoffenheim"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the Revierderby?", options: ["Bayern vs Dortmund", "Dortmund vs Schalke", "Hamburg vs Bremen", "Gladbach vs Köln"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which Bundesliga team is owned by Volkswagen?", options: ["Wolfsburg", "Hoffenheim", "RB Leipzig", "Augsburg"], correctAnswer: 0, difficulty: "medium" },
+    { question: "How many Bundesliga goals did Robert Lewandowski score?", options: ["250", "278", "312", "290"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which team won the 2024 Bundesliga title unbeaten?", options: ["Bayern Munich", "Dortmund", "Bayer Leverkusen", "RB Leipzig"], correctAnswer: 2, difficulty: "medium" },
+    // HARD
+    { question: "Which club's stadium is 'Signal Iduna Park'?", options: ["Bayern Munich", "Schalke 04", "Borussia Dortmund", "Wolfsburg"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who managed Dortmund to back-to-back titles in 2011-12?", options: ["Thomas Tuchel", "Jürgen Klopp", "Lucien Favre", "Peter Bosz"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which team has the highest average attendance in world football?", options: ["Bayern Munich", "Barcelona", "Borussia Dortmund", "Manchester United"], correctAnswer: 2, difficulty: "hard" },
+    { question: "What is the '50+1 rule'?", options: ["Squad size limit", "Club ownership", "Youth quotas", "TV revenue"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Bundesliga team went unbeaten in 2023-24?", options: ["Bayern Munich", "Dortmund", "Bayer Leverkusen", "RB Leipzig"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who is the youngest Bundesliga scorer ever?", options: ["Florian Wirtz", "Youssoufa Moukoko", "Jamal Musiala", "Kai Havertz"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which club has been in every Bundesliga season since 1963?", options: ["Borussia Dortmund", "Bayern Munich", "Hamburg", "Werder Bremen"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Who scored 5 goals in 9 minutes vs Wolfsburg?", options: ["Erling Haaland", "Robert Lewandowski", "Gerd Müller", "Pierre-Emerick Aubameyang"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In what year was the Bundesliga founded?", options: ["1950", "1957", "1963", "1970"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which club won the last ever European Cup Winners' Cup?", options: ["Chelsea", "Lazio", "Mallorca", "Stuttgart"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which German club reached the 2024 CL final?", options: ["Bayern Munich", "RB Leipzig", "Borussia Dortmund", "Bayer Leverkusen"], correctAnswer: 2, difficulty: "hard" },
+  ],
+  "ligue-1": [
+    // EASY
+    { question: "Which club has won the most Ligue 1 titles?", options: ["Marseille", "Lyon", "PSG", "Saint-Étienne"], correctAnswer: 2, difficulty: "easy" },
+    { question: "In which city is PSG based?", options: ["Lyon", "Marseille", "Paris", "Nice"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which country does Ligue 1 belong to?", options: ["Belgium", "France", "Switzerland", "Monaco"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Who is PSG's record goal scorer?", options: ["Zlatan Ibrahimović", "Kylian Mbappé", "Edinson Cavani", "Neymar"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which French club won the Champions League in 1993?", options: ["PSG", "Monaco", "Marseille", "Lyon"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What color is PSG's home kit?", options: ["White", "Red", "Blue", "Green"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which famous stadium is in Paris but not PSG's home?", options: ["Parc des Princes", "Stade de France", "Stade Vélodrome", "Stade de la Beaujoire"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which club plays at the Stade Vélodrome?", options: ["PSG", "Lyon", "Marseille", "Nice"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Marseille commonly abbreviated as?", options: ["PSG", "OL", "OM", "ASSE"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which country's league is Ligue 1 part of the 'top 5'?", options: ["Belgium", "Netherlands", "Portugal", "France"], correctAnswer: 3, difficulty: "easy" },
+    // MEDIUM
+    { question: "How many consecutive Ligue 1 titles did Lyon win (2002-2008)?", options: ["5", "6", "7", "8"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which Ligue 1 club is in the Principality of Monaco?", options: ["Nice", "AS Monaco", "Marseille", "Montpellier"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who is Ligue 1's all-time top scorer?", options: ["Jean-Pierre Papin", "Delio Onnis", "Hervé Revelli", "Zlatan"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which Ligue 1 club won the title in 2020-21?", options: ["PSG", "Lille", "Lyon", "Monaco"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the rivalry between PSG and Marseille called?", options: ["Le Classique", "Le Derby", "Le Grand Match", "La Guerre"], correctAnswer: 0, difficulty: "medium" },
+    { question: "Which stadium does PSG play at?", options: ["Stade de France", "Parc des Princes", "Stade Vélodrome", "Stade de la Beaujoire"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which French club is nicknamed 'Les Verts'?", options: ["Nantes", "Saint-Étienne", "Rennes", "Lens"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who won the 2023 Ballon d'Or while playing in Ligue 1?", options: ["Neymar", "Kylian Mbappé", "Lionel Messi", "No one from Ligue 1"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which Ligue 1 club produced Thierry Henry?", options: ["PSG", "Monaco", "Marseille", "Lyon"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is AS Monaco's unique tax situation?", options: ["No corporate tax", "Players pay no income tax", "Club is tax-exempt", "No tax on transfers"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "Which club did Mbappé start his career at?", options: ["PSG", "Lyon", "Monaco", "Rennes"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who managed Monaco to the Ligue 1 title in 2016-17?", options: ["Claudio Ranieri", "Leonardo Jardim", "Niko Kovač", "Thierry Henry"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Montpellier won Ligue 1 for the first time in which year?", options: ["2010", "2011", "2012", "2013"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which team finished 2nd most times without winning Ligue 1?", options: ["Bordeaux", "Nice", "Nantes", "Lens"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many Ligue 1 titles has Marseille won?", options: ["7", "9", "10", "11"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Ligue 1 club is nicknamed 'Les Gones'?", options: ["PSG", "Marseille", "Lyon", "Lille"], correctAnswer: 2, difficulty: "hard" },
+    { question: "In what year was Ligue 1 founded?", options: ["1929", "1932", "1938", "1945"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which French club reached the CL semi-finals in 2019-20?", options: ["Marseille", "Lyon", "PSG", "Monaco"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Who holds the record for most Ligue 1 titles as manager?", options: ["Albert Batteux", "Guy Roux", "Aimé Jacquet", "Laurent Blanc"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club won the inaugural Ligue 1 season?", options: ["Marseille", "Olympique Lillois", "Sète", "Racing Paris"], correctAnswer: 1, difficulty: "hard" },
+  ],
+  "primeira-liga": [
+    // EASY
+    { question: "Which club has won the most Primeira Liga titles?", options: ["Porto", "Benfica", "Sporting CP", "Braga"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are Portugal's 'Big Three' clubs?", options: ["Benfica, Porto, Braga", "Benfica, Porto, Sporting", "Sporting, Braga, Porto", "Benfica, Vitória, Porto"], correctAnswer: 1, difficulty: "easy" },
+    { question: "In which city is Benfica based?", options: ["Porto", "Lisbon", "Braga", "Faro"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is Benfica's mascot?", options: ["Lion", "Eagle", "Dragon", "Bull"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city is Porto based in?", options: ["Lisbon", "Porto", "Braga", "Coimbra"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What is Porto's mascot/symbol?", options: ["Eagle", "Lion", "Dragon", "Bull"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What color does Sporting CP wear?", options: ["Red", "Blue", "Green and White", "Yellow"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which Portuguese player is the most famous ever?", options: ["Eusébio", "Cristiano Ronaldo", "Luís Figo", "All of them"], correctAnswer: 3, difficulty: "easy" },
+    // MEDIUM
+    { question: "What is Benfica's stadium called?", options: ["Estádio do Dragão", "Estádio da Luz", "Estádio José Alvalade", "Municipal"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which manager led Porto to the CL in 2004?", options: ["André Villas-Boas", "José Mourinho", "Vítor Pereira", "Nuno"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which Portuguese club is nicknamed 'Os Leões'?", options: ["Benfica", "Porto", "Sporting CP", "Braga"], correctAnswer: 2, difficulty: "medium" },
+    { question: "What is Porto's stadium called?", options: ["Estádio da Luz", "Estádio do Dragão", "Estádio José Alvalade", "Estádio do Bessa"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which club is Benfica's biggest rival in Lisbon?", options: ["Porto", "Sporting CP", "Braga", "Vitória"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the derby between Benfica and Sporting called?", options: ["O Clássico", "Derby de Lisboa", "Both A and B", "Derby do Minho"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which Portuguese star won the Ballon d'Or in 2000?", options: ["Rui Costa", "Luís Figo", "Deco", "Cristiano Ronaldo"], correctAnswer: 1, difficulty: "medium" },
+    { question: "How many Champions League titles has Porto won?", options: ["1", "2", "3", "4"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "Who is the Primeira Liga's all-time top scorer?", options: ["Eusébio", "Fernando Peyroteo", "Mário Jardel", "Hulk"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In what year did Sporting CP last win the league before 2021?", options: ["1999-00", "2000-01", "2001-02", "1997-98"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which famous player came through Sporting's academy?", options: ["Lionel Messi", "Cristiano Ronaldo", "Neymar", "Kylian Mbappé"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many European Cup/CL titles has Benfica won?", options: ["1", "2", "3", "4"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many CL finals has Benfica lost?", options: ["3", "5", "7", "4"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Portuguese club produced Bernardo Silva?", options: ["Porto", "Benfica", "Sporting CP", "Braga"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In what decade did Eusébio lead Benfica to two European Cups?", options: ["1950s", "1960s", "1970s", "1980s"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Portuguese manager is known as 'The Translator'?", options: ["José Mourinho", "André Villas-Boas", "Leonardo Jardim", "Jorge Jesus"], correctAnswer: 0, difficulty: "hard" },
+  ],
+  "eredivisie": [
+    // EASY
+    { question: "Which club has won the most Eredivisie titles?", options: ["Feyenoord", "PSV", "Ajax", "AZ Alkmaar"], correctAnswer: 2, difficulty: "easy" },
+    { question: "In which city is Ajax based?", options: ["Rotterdam", "Eindhoven", "Amsterdam", "The Hague"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Ajax's stadium called?", options: ["De Kuip", "Johan Cruyff Arena", "Philips Stadion", "Gelredome"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which legendary player came from Ajax?", options: ["Pelé", "Johan Cruyff", "Diego Maradona", "Franz Beckenbauer"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are Ajax's colors?", options: ["Blue/White", "Red/White", "Green/White", "Yellow/Black"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which country is the Eredivisie from?", options: ["Belgium", "Netherlands", "Denmark", "Sweden"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which Dutch club has a famous 'Cruyff Arena'?", options: ["PSV", "Feyenoord", "Ajax", "AZ"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many clubs play in the Eredivisie?", options: ["16", "18", "20", "22"], correctAnswer: 1, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which Dutch club plays in Eindhoven?", options: ["Ajax", "Feyenoord", "PSV", "AZ"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Who is the Eredivisie's all-time top scorer?", options: ["Marco van Basten", "Willy van der Kuijlen", "Ruud van Nistelrooy", "Dennis Bergkamp"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is Feyenoord's stadium called?", options: ["Johan Cruyff Arena", "De Kuip", "Philips Stadion", "AFAS Stadion"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which city is Feyenoord from?", options: ["Amsterdam", "Eindhoven", "Rotterdam", "Utrecht"], correctAnswer: 2, difficulty: "medium" },
+    { question: "What does PSV stand for?", options: ["Philips Sport Vereniging", "Professional Sport Voetbal", "Premier Sport Vereniging", "Public Sport Voetbal"], correctAnswer: 0, difficulty: "medium" },
+    { question: "Which Dutch club won the CL in 1988?", options: ["Ajax", "Feyenoord", "PSV", "AZ"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which player was Ajax's star in the 2018-19 CL run?", options: ["Frenkie de Jong", "Matthijs de Ligt", "Hakim Ziyech", "All of them"], correctAnswer: 3, difficulty: "medium" },
+    { question: "Which Dutch club is from Rotterdam?", options: ["Ajax", "PSV", "Feyenoord", "AZ"], correctAnswer: 2, difficulty: "medium" },
+    // HARD
+    { question: "Which Ajax team won the CL in 1995?", options: ["Frank Rijkaard's", "Louis van Gaal's", "Johan Cruyff's", "Marco van Basten's"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many Champions League titles has Ajax won?", options: ["2", "3", "4", "5"], correctAnswer: 2, difficulty: "hard" },
+    { question: "What is the famous rivalry between Ajax, PSV, and Feyenoord called?", options: ["The Big Three", "De Grote Drie", "Dutch Classic", "Triple Crown"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Dutch concept revolutionized football tactics?", options: ["Catenaccio", "Tiki-taka", "Total Football", "Gegenpressing"], correctAnswer: 2, difficulty: "hard" },
+    { question: "In what year was the Eredivisie founded?", options: ["1950", "1954", "1956", "1960"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which Dutch club produced Dennis Bergkamp?", options: ["PSV", "Ajax", "Feyenoord", "AZ"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Eredivisie club won the 1970 European Cup?", options: ["Ajax", "PSV", "Feyenoord", "AZ"], correctAnswer: 2, difficulty: "hard" },
+    { question: "How many consecutive CL titles did Ajax win in the 1970s?", options: ["2", "3", "4", "5"], correctAnswer: 1, difficulty: "hard" },
+  ],
+  "belgian-pro": [
+    // EASY
+    { question: "Which club has won the most Belgian league titles?", options: ["Club Brugge", "RSC Anderlecht", "Standard Liège", "Genk"], correctAnswer: 1, difficulty: "easy" },
+    { question: "In which city is Anderlecht based?", options: ["Bruges", "Brussels", "Liège", "Ghent"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are the colors of Club Brugge?", options: ["Red and White", "Blue and Black", "Green and White", "Yellow and Blue"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which Belgian city is known for its chocolate and Club Brugge?", options: ["Brussels", "Antwerp", "Bruges", "Ghent"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which Belgian club plays in red?", options: ["Club Brugge", "Anderlecht", "Standard Liège", "Genk"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What is Anderlecht's primary color?", options: ["Red", "Blue", "Purple and White", "Green"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many clubs are in the Belgian Pro League?", options: ["16", "18", "20", "14"], correctAnswer: 1, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which Belgian club reached the CL semi-finals in 1986?", options: ["Club Brugge", "Anderlecht", "Standard Liège", "Genk"], correctAnswer: 0, difficulty: "medium" },
+    { question: "How many times has Belgium's league changed its name?", options: ["2", "3", "4", "5"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which famous player started at Anderlecht's academy?", options: ["Eden Hazard", "Kevin De Bruyne", "Vincent Kompany", "Romelu Lukaku"], correctAnswer: 3, difficulty: "medium" },
+    { question: "Which Belgian club won the UEFA Cup in 1983?", options: ["Club Brugge", "Anderlecht", "Standard Liège", "Mechelen"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who is the Belgian league's most famous manager turned player?", options: ["Vincent Kompany", "Marc Wilmots", "Franky Vercauteren", "Michel Preud'homme"], correctAnswer: 0, difficulty: "medium" },
+    { question: "Which Belgian club produced Kevin De Bruyne?", options: ["Anderlecht", "Club Brugge", "Genk", "Standard Liège"], correctAnswer: 2, difficulty: "medium" },
+    { question: "What is the format of the Belgian Pro League?", options: ["Regular season only", "Regular season + Championship playoffs", "Two groups", "Three rounds"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "Which Belgian club won the Cup Winners' Cup in 1976?", options: ["Anderlecht", "Club Brugge", "Standard Liège", "Mechelen"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Who is the Belgian Pro League's all-time top scorer?", options: ["Erwin Vandenbergh", "Joseph Mermans", "Paul Van Himst", "Bernard Voorhoof"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Belgian club has the unique 'playoff' system?", options: ["All of them", "Only the top 6", "Only the top 4", "Only the top 8"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which Belgian club won the Cup Winners' Cup in 1988?", options: ["Anderlecht", "Club Brugge", "Standard Liège", "KV Mechelen"], correctAnswer: 3, difficulty: "hard" },
+    { question: "How many European trophies has Anderlecht won?", options: ["1", "2", "3", "4"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which Belgian club reached the 1978 European Cup final?", options: ["Anderlecht", "Club Brugge", "Standard Liège", "Genk"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In what year was the Belgian Pro League founded?", options: ["1895", "1900", "1904", "1910"], correctAnswer: 0, difficulty: "hard" },
+  ],
+  "mls": [
+    // EASY
+    { question: "When was MLS founded?", options: ["1993", "1996", "1999", "2002"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which team has won the most MLS Cup titles?", options: ["LA Galaxy", "D.C. United", "Columbus Crew", "Seattle Sounders"], correctAnswer: 0, difficulty: "easy" },
+    { question: "Which famous player joined LA Galaxy in 2007?", options: ["Thierry Henry", "David Beckham", "Robbie Keane", "Steven Gerrard"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which city is Inter Miami based in?", options: ["New York", "Los Angeles", "Miami", "Houston"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What country is MLS the top league of?", options: ["Canada", "USA", "USA and Canada", "Mexico"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which former England captain played for LA Galaxy?", options: ["Steven Gerrard", "David Beckham", "Frank Lampard", "Wayne Rooney"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What color does Inter Miami primarily wear?", options: ["Blue", "Red", "Pink/Black", "White"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which MLS team is based in Seattle?", options: ["Portland Timbers", "Seattle Sounders", "Vancouver Whitecaps", "San Jose Earthquakes"], correctAnswer: 1, difficulty: "easy" },
+    // MEDIUM
+    { question: "What is the MLS playoff championship trophy called?", options: ["MLS Shield", "Anschutz Trophy", "Supporters' Shield", "MLS Cup"], correctAnswer: 3, difficulty: "medium" },
+    { question: "Which MLS team plays at Mercedes-Benz Stadium?", options: ["Atlanta United", "Inter Miami", "LAFC", "Nashville SC"], correctAnswer: 0, difficulty: "medium" },
+    { question: "What is the Supporters' Shield awarded for?", options: ["Best defense", "Most goals", "Best regular season", "Fair play"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which former Barcelona player co-owns Inter Miami?", options: ["Xavi", "David Beckham", "Thierry Henry", "David Villa"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which MLS expansion team won the MLS Cup in its second season?", options: ["LAFC", "Atlanta United", "Nashville SC", "Charlotte FC"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is LAFC's stadium called?", options: ["Dignity Health Sports Park", "BMO Stadium", "Rose Bowl", "SoFi Stadium"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which European legend played for New York Red Bulls?", options: ["Andrea Pirlo", "Thierry Henry", "Frank Lampard", "Steven Gerrard"], correctAnswer: 1, difficulty: "medium" },
+    { question: "How many Canadian teams are in MLS?", options: ["1", "2", "3", "4"], correctAnswer: 2, difficulty: "medium" },
+    // HARD
+    { question: "Who is MLS's all-time leading goal scorer?", options: ["Landon Donovan", "Chris Wondolowski", "David Villa", "Josef Martínez"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In which year did Lionel Messi join Inter Miami?", options: ["2022", "2023", "2024", "2021"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which MLS team was the first expansion team to win MLS Cup?", options: ["Chicago Fire", "Atlanta United", "LAFC", "Nashville SC"], correctAnswer: 0, difficulty: "hard" },
+    { question: "What was the original number of MLS teams in 1996?", options: ["8", "10", "12", "14"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which MLS club has the record for most goals in a season?", options: ["LAFC", "Atlanta United", "LA Galaxy", "New England Revolution"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Who scored the first ever MLS goal?", options: ["Eric Wynalda", "Scott Vermillion", "Tab Ramos", "John Harkes"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which MLS team has never won the MLS Cup?", options: ["LA Galaxy", "Columbus Crew", "New York Red Bulls", "Seattle Sounders"], correctAnswer: 2, difficulty: "hard" },
+  ],
+  "super-lig": [
+    // EASY
+    { question: "Which club has won the most Süper Lig titles?", options: ["Fenerbahçe", "Galatasaray", "Beşiktaş", "Trabzonspor"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are the 'Big Three' in Turkish football?", options: ["Galatasaray, Fenerbahçe, Trabzonspor", "Galatasaray, Fenerbahçe, Beşiktaş", "Beşiktaş, Fenerbahçe, Trabzonspor", "Galatasaray, Beşiktaş, Trabzonspor"], correctAnswer: 1, difficulty: "easy" },
+    { question: "In which city are the 'Big Three' based?", options: ["Ankara", "Istanbul", "Izmir", "Antalya"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are Galatasaray's colors?", options: ["Blue/White", "Red/Yellow", "Black/White", "Green/Red"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What are Fenerbahçe's colors?", options: ["Red/Yellow", "Blue/White", "Yellow/Navy Blue", "Green/White"], correctAnswer: 2, difficulty: "easy" },
+    { question: "What are Beşiktaş's colors?", options: ["Red/White", "Blue/Yellow", "Black/White", "Green/White"], correctAnswer: 2, difficulty: "easy" },
+    { question: "Which country does the Süper Lig belong to?", options: ["Greece", "Turkey", "Egypt", "Iran"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Which Turkish club's fans are known as 'Çarşı'?", options: ["Galatasaray", "Fenerbahçe", "Beşiktaş", "Trabzonspor"], correctAnswer: 2, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which Turkish club won the UEFA Cup in 2000?", options: ["Fenerbahçe", "Beşiktaş", "Galatasaray", "Trabzonspor"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which famous Brazilian played for Fenerbahçe?", options: ["Ronaldinho", "Alex de Souza", "Rivaldo", "Kaká"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the famous derby between Galatasaray and Fenerbahçe called?", options: ["Kıtalar Arası Derbi", "Istanbul Derby", "Both A and B", "Turkish Classic"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which Galatasaray player scored the winning goal in the 2000 UEFA Cup?", options: ["Hakan Şükür", "Gheorghe Hagi", "Arif Erdem", "Popescu"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is Galatasaray's stadium called?", options: ["Atatürk Olympic Stadium", "NEF Stadium", "Şükrü Saracoğlu", "Vodafone Park"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which legendary Romanian played for Galatasaray?", options: ["Adrian Mutu", "Gheorghe Hagi", "Cristian Chivu", "Dan Petrescu"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which German World Cup winner managed Galatasaray?", options: ["Lothar Matthäus", "Jürgen Klinsmann", "Fatih Terim", "Christoph Daum"], correctAnswer: 3, difficulty: "medium" },
+    // HARD
+    { question: "Who is the Süper Lig's all-time top scorer?", options: ["Hakan Şükür", "Metin Oktay", "Tanju Çolak", "Alex de Souza"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club broke the Big Three's dominance in 2021-22?", options: ["Başakşehir", "Trabzonspor", "Konyaspor", "Sivasspor"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Turkish club reached the CL quarter-finals in 2001?", options: ["Fenerbahçe", "Beşiktaş", "Galatasaray", "Trabzonspor"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who is known as 'The Emperor' of Turkish football?", options: ["Hakan Şükür", "Fatih Terim", "Arda Turan", "Emre Belözoğlu"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In what year was the Süper Lig founded?", options: ["1955", "1959", "1963", "1970"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which Süper Lig club won the UEFA Cup Winners' Cup?", options: ["Galatasaray", "No Turkish club has", "Fenerbahçe", "Beşiktaş"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many Süper Lig titles has Galatasaray won?", options: ["20", "22", "24", "19"], correctAnswer: 2, difficulty: "hard" },
+  ],
+  "champions-league": [
+    // EASY
+    { question: "Which club has won the most Champions League titles?", options: ["AC Milan", "Barcelona", "Real Madrid", "Liverpool"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many Champions League titles has Real Madrid won?", options: ["12", "13", "14", "15"], correctAnswer: 3, difficulty: "easy" },
+    { question: "What was the CL called before 1992?", options: ["UEFA Cup", "European Cup", "Cup Winners' Cup", "Super Cup"], correctAnswer: 1, difficulty: "easy" },
+    { question: "Who is the CL's all-time top scorer?", options: ["Lionel Messi", "Cristiano Ronaldo", "Robert Lewandowski", "Raúl"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What does the CL anthem begin with?", options: ["'The champions!'", "'Les grandes équipes'", "'Die Meister, Die Besten'", "'Football is life'"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many teams participate in the CL group stage?", options: ["24", "32", "36", "16"], correctAnswer: 1, difficulty: "easy" },
+    { question: "What shape are the stars on the CL logo?", options: ["5-pointed", "6-pointed", "8-pointed", "4-pointed"], correctAnswer: 0, difficulty: "easy" },
+    { question: "Which trophy is awarded to the CL winner?", options: ["UEFA Shield", "Big Ears Trophy", "Golden Cup", "Champions Shield"], correctAnswer: 1, difficulty: "easy" },
+    { question: "In which language is the CL anthem sung?", options: ["English only", "French and German", "English, French, and German", "Spanish and English"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many CL titles has AC Milan won?", options: ["5", "6", "7", "8"], correctAnswer: 2, difficulty: "easy" },
+    { question: "How many CL titles has Liverpool won?", options: ["4", "5", "6", "7"], correctAnswer: 2, difficulty: "easy" },
+    // MEDIUM
+    { question: "Which team won the CL in the 'Miracle of Istanbul' 2005?", options: ["AC Milan", "Liverpool", "Chelsea", "Barcelona"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who scored the winning goal in the 1999 CL final?", options: ["Teddy Sheringham", "Ole Gunnar Solskjær", "David Beckham", "Ryan Giggs"], correctAnswer: 1, difficulty: "medium" },
+    { question: "How many consecutive CL titles did Real Madrid win (2016-18)?", options: ["2", "3", "4", "5"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team completed the treble in 2009?", options: ["Real Madrid", "Manchester United", "Barcelona", "Bayern Munich"], correctAnswer: 2, difficulty: "medium" },
+    { question: "Which English club won the CL for the first time in 2012?", options: ["Manchester City", "Chelsea", "Tottenham", "Arsenal"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which was the first English club to win the European Cup?", options: ["Liverpool", "Manchester United", "Celtic", "Nottingham Forest"], correctAnswer: 1, difficulty: "medium" },
+    { question: "In which city was the 2023 CL final held?", options: ["Paris", "Istanbul", "London", "Madrid"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which club won the CL in 2022-23?", options: ["Real Madrid", "Manchester City", "Inter Milan", "AC Milan"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Who scored in the 2023 CL final?", options: ["Erling Haaland", "Rodri", "Kevin De Bruyne", "Bernardo Silva"], correctAnswer: 1, difficulty: "medium" },
+    { question: "Which team has appeared in the most CL finals?", options: ["AC Milan", "Real Madrid", "Bayern Munich", "Juventus"], correctAnswer: 1, difficulty: "medium" },
+    { question: "What is the CL group stage format (pre-2024)?", options: ["6 groups of 6", "8 groups of 4", "4 groups of 8", "12 groups of 3"], correctAnswer: 1, difficulty: "medium" },
+    // HARD
+    { question: "Who managed Inter Milan to the CL in 2010?", options: ["Carlo Ancelotti", "José Mourinho", "Roberto Mancini", "Rafa Benítez"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which was the first team to win the European Cup three consecutive times?", options: ["AC Milan", "Real Madrid", "Ajax", "Bayern Munich"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Who scored a hat-trick in the 2018 CL final?", options: ["Cristiano Ronaldo", "Gareth Bale", "Karim Benzema", "No one did"], correctAnswer: 3, difficulty: "hard" },
+    { question: "Which club has lost the most CL finals?", options: ["Bayern Munich", "Juventus", "Benfica", "Atlético Madrid"], correctAnswer: 1, difficulty: "hard" },
+    { question: "In which year did a Greek team last reach the QF?", options: ["2010", "2014", "2016", "2008"], correctAnswer: 1, difficulty: "hard" },
+    { question: "Which player has appeared in the most CL finals?", options: ["Cristiano Ronaldo", "Francisco Gento", "Paolo Maldini", "Karim Benzema"], correctAnswer: 1, difficulty: "hard" },
+    { question: "How many CL goals has Cristiano Ronaldo scored?", options: ["120", "130", "140", "150+"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which is the only club to win the CL/European Cup in all their final appearances (5+)?", options: ["Real Madrid", "AC Milan", "No club has", "Liverpool"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Which team won the first ever Champions League (rebranded) final in 1993?", options: ["AC Milan", "Barcelona", "Marseille", "Sampdoria"], correctAnswer: 2, difficulty: "hard" },
+    { question: "Who scored the fastest CL hat-trick?", options: ["Robert Lewandowski", "Bafétimbi Gomis", "Luiz Adriano", "Mike Owen"], correctAnswer: 0, difficulty: "hard" },
+    { question: "Which club won the CL from the 2nd qualifying round in 2004-05?", options: ["PSV", "Liverpool", "Monaco", "Porto"], correctAnswer: 1, difficulty: "hard" },
+  ],
+};
+
+export function getQuestions(leagueId: string, difficulty: Difficulty, count: number = 10): QuizQuestion[] {
+  let questions: QuizQuestion[];
+  
+  if (leagueId === "players") {
+    questions = playerQuizQuestions;
+  } else if (leagueId === "managers") {
+    questions = managerQuizQuestions;
+  } else {
+    questions = leagueQuestions[leagueId] || [];
+  }
+
+  const filtered = questions.filter(q => q.difficulty === difficulty);
+  
+  // Shuffle and pick - ensures new questions each time
+  const shuffled = [...filtered].sort(() => Math.random() - 0.5);
+  
+  if (shuffled.length < count) {
+    const remaining = questions.filter(q => q.difficulty !== difficulty);
+    const shuffledRemaining = [...remaining].sort(() => Math.random() - 0.5);
+    shuffled.push(...shuffledRemaining.slice(0, count - shuffled.length));
+  }
+  
+  return shuffled.slice(0, count);
+}

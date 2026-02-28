@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 10% 97%;
+    --foreground: 160 30% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 8%;
+
+    --primary: 160 84% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 160 30% 8%;
+
+    --muted: 120 10% 93%;
+    --muted-foreground: 160 10% 40%;
+
+    --accent: 160 60% 92%;
+    --accent-foreground: 160 84% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 88%;
+    --input: 160 15% 88%;
+    --ring: 160 84% 28%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 160 84% 28%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 160 60% 92%;
+    --sidebar-accent-foreground: 160 84% 20%;
+    --sidebar-border: 160 15% 88%;
+    --sidebar-ring: 160 84% 28%;
+
+    --pitch: 142 71% 29%;
+    --pitch-foreground: 0 0% 100%;
+    --gold: 43 96% 56%;
+    --gold-foreground: 43 50% 15%;
+    --trophy: 43 96% 56%;
+  }
+
+  .dark {
+    --background: 160 20% 6%;
+    --foreground: 120 10% 93%;
+
+    --card: 160 20% 10%;
+    --card-foreground: 120 10% 93%;
+
+    --popover: 160 20% 10%;
+    --popover-foreground: 120 10% 93%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 80% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 160 15% 15%;
+    --muted-foreground: 160 10% 60%;
+
+    --accent: 160 40% 18%;
+    --accent-foreground: 160 60% 80%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 18%;
+    --input: 160 15% 18%;
+    --ring: 160 84% 39%;
+
+    --sidebar-background: 160 20% 8%;
+    --sidebar-foreground: 120 10% 90%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 40% 18%;
+    --sidebar-accent-foreground: 160 60% 80%;
+    --sidebar-border: 160 15% 18%;
+    --sidebar-ring: 160 84% 39%;
+
+    --pitch: 142 71% 25%;
+    --pitch-foreground: 0 0% 100%;
+    --gold: 43 80% 50%;
+    --gold-foreground: 0 0% 100%;
+    --trophy: 43 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(43 96% 56%), hsl(35 90% 45%));
+  }
+
+  .bg-pitch-gradient {
+    background: linear-gradient(135deg, hsl(var(--pitch)), hsl(160 84% 28%));
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(160deg, hsl(160 30% 8%), hsl(var(--pitch)), hsl(160 60% 20%));
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.03] hover:shadow-xl;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(160 84% 28% / 0.3);
+  }
+}
