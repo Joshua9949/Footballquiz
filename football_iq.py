@@ -81,7 +81,7 @@ class FootballIQ(gl.Contract):
     last_quiz: TreeMap[str, str]
 
     def __init__(self) -> None:
-        self.owner = gl.message.sender_account
+        self.owner = gl.message.sender_address
         self.model_name = DEFAULT_MODEL_NAME
         self.system_prompt = DEFAULT_SYSTEM_PROMPT
         self.max_questions = u256(DEFAULT_MAX_QUESTIONS)
@@ -159,12 +159,12 @@ class FootballIQ(gl.Contract):
         if not isinstance(message, str) or message.strip() == "":
             raise gl.vm.UserError(f"{ERROR_EXPECTED} message cannot be empty")
 
-        sender_key = _normalize_addr(str(gl.message.sender_account))
+        sender_key = _normalize_addr(str(gl.message.sender_address))
         system_prompt = self.system_prompt
         prompt = self._build_chat_prompt(system_prompt, history_json, message)
 
         def leader_fn() -> str:
-            return gl.exec_prompt(prompt)
+            return gl.nondet.exec_prompt(prompt)
 
         reply_text = gl.eq_principle.prompt_comparative(
             leader_fn,
@@ -194,13 +194,13 @@ class FootballIQ(gl.Contract):
             raise gl.vm.UserError(f"{ERROR_EXPECTED} player_name cannot be empty")
 
         bounded = self._bound_count(count)
-        sender_key = _normalize_addr(str(gl.message.sender_account))
+        sender_key = _normalize_addr(str(gl.message.sender_address))
         prompt = self._build_quiz_prompt(
             "player", player_name.strip(), difficulty, bounded
         )
 
         def leader_fn() -> str:
-            return gl.exec_prompt(prompt)
+            return gl.nondet.exec_prompt(prompt)
 
         raw_quiz = gl.eq_principle.prompt_comparative(
             leader_fn,
@@ -229,13 +229,13 @@ class FootballIQ(gl.Contract):
             )
 
         bounded = self._bound_count(count)
-        sender_key = _normalize_addr(str(gl.message.sender_account))
+        sender_key = _normalize_addr(str(gl.message.sender_address))
         prompt = self._build_quiz_prompt(
             "category", category, difficulty, bounded
         )
 
         def leader_fn() -> str:
-            return gl.exec_prompt(prompt)
+            return gl.nondet.exec_prompt(prompt)
 
         raw_quiz = gl.eq_principle.prompt_comparative(
             leader_fn,
@@ -255,7 +255,7 @@ class FootballIQ(gl.Contract):
     # ----- Internal deterministic helpers -----
 
     def _require_owner(self) -> None:
-        if gl.message.sender_account != self.owner:
+        if gl.message.sender_address != self.owner:
             raise gl.vm.UserError(f"{ERROR_EXPECTED} only the owner can perform this action")
 
     def _require_difficulty(self, difficulty: str) -> None:
